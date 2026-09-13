@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Área do ADM — Café BPX</title>
+  <meta name="description" content="Administração de disponibilidade dos cafés da BPX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="admin">
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand-wrap" href="index.html" aria-label="Café BPX - início">
+          <div class="brand-mark"><span>☕</span></div>
+          <div class="brand-copy">
+            <div class="brand-title">CAFÉ BPX</div>
+            <div class="brand-subtitle">Área do administrador</div>
+          </div>
+        </a>
+        <a class="admin-link" href="index.html">Sair</a>
+      </div>
+    </header>
+
+    <main class="container main-flow admin-main">
+      <section class="section-head admin-head">
+        <div>
+          <h2>Controle de disponibilidade</h2>
+          <p class="admin-subtitle">Ative ou desative cada bebida e salve o status atual.</p>
+        </div>
+        <div class="admin-actions">
+          <button id="saveBtn" class="save-btn" type="button">Salvar</button>
+          <div id="adminAvailability" class="availability-pill">9 de 12 disponíveis</div>
+        </div>
+      </section>
+
+      <section id="adminGrid" class="coffee-grid admin-grid" aria-label="Painel administrativo"></section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
