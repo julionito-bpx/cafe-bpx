@@ -1,17 +1,17 @@
-const STORAGE_KEY="cafe-bpx-state-v2";
+const STORAGE_KEY="cafe-bpx-state-v3";
 const DEFAULT_COFFEES=[
-{id:1,name:"Espresso",image:"images/espresso.jpg",available:true},
-{id:2,name:"Curto",image:"images/curto.jpg",available:true},
-{id:3,name:"Duplo",image:"images/duplo.jpg",available:true},
-{id:4,name:"Americano",image:"images/americano.jpg",available:true},
-{id:5,name:"Cappuccino",image:"images/cappuccino.jpg",available:true},
-{id:6,name:"Café com leite",image:"images/cafe-com-leite.jpg",available:true},
-{id:7,name:"Café com leite curto",image:"images/cafe-com-leite-curto.jpg",available:true},
-{id:8,name:"Nescau com leite",image:"images/nescau-com-leite.jpg",available:true},
-{id:9,name:"Cappuccino Alpino",image:"images/cappuccino-alpino.jpg",available:true},
-{id:10,name:"Achocolatado Alpino",image:"images/achocolatado-alpino.jpg",available:false},
-{id:11,name:"Mokaccino Dois Frades",image:"images/mokaccino-dois-frades.jpg",available:false},
-{id:12,name:"Achocolatado Dois Frades",image:"images/achocolatado-dois-frades.jpg",available:false}
+{id:1,name:"Espresso",image:"images/espresso.svg",available:true},
+{id:2,name:"Curto",image:"images/curto.svg",available:true},
+{id:3,name:"Duplo",image:"images/coffee.svg",available:true},
+{id:4,name:"Americano",image:"images/coffee.svg",available:true},
+{id:5,name:"Cappuccino",image:"images/coffee.svg",available:true},
+{id:6,name:"Café com leite",image:"images/coffee.svg",available:true},
+{id:7,name:"Café com leite curto",image:"images/coffee.svg",available:true},
+{id:8,name:"Nescau com leite",image:"images/nescau.svg",available:true},
+{id:9,name:"Cappuccino Alpino",image:"images/alpino.svg",available:true},
+{id:10,name:"Achocolatado Alpino",image:"images/alpino.svg",available:false},
+{id:11,name:"Mokaccino Dois Frades",image:"images/frades.svg",available:false},
+{id:12,name:"Achocolatado Dois Frades",image:"images/frades.svg",available:false}
 ];
 function cloneState(data){return JSON.parse(JSON.stringify(data))}
 function getCoffees(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return cloneState(DEFAULT_COFFEES);try{const parsed=JSON.parse(raw);if(!Array.isArray(parsed)||parsed.length!==DEFAULT_COFFEES.length)return cloneState(DEFAULT_COFFEES);return parsed.map((item,index)=>({...DEFAULT_COFFEES[index],available:Boolean(item.available)}))}catch{return cloneState(DEFAULT_COFFEES)}}
