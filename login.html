@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login ADM — Café BPX</title>
+  <meta name="description" content="Acesso administrativo do Café BPX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="login">
+  <div class="site-shell login-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand-wrap" href="index.html" aria-label="Café BPX - início">
+          <div class="brand-mark"><span>☕</span></div>
+          <div class="brand-copy">
+            <div class="brand-title">CAFÉ BPX</div>
+            <div class="brand-subtitle">Que tal um café?</div>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <main class="container login-main">
+      <section class="login-card">
+        <div class="adm-badge">ADM</div>
+        <h1>Acesso administrativo</h1>
+        <p>Entre para atualizar a disponibilidade dos cafés.</p>
+        <form id="loginForm" class="login-form">
+          <div class="field">
+            <label for="user">Usuário</label>
+            <input id="user" type="text" value="admin" autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input id="password" type="password" value="admin" autocomplete="current-password" />
+          </div>
+          <button type="submit" class="primary-btn">Entrar</button>
+        </form>
+        <a class="back-link" href="index.html">Voltar para visualização</a>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
