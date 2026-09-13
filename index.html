@@ -15,13 +15,18 @@
     <header class="topbar">
       <div class="container topbar-inner">
         <a class="brand-wrap" href="index.html" aria-label="Café BPX - início">
-          <div class="brand-mark"><span>☕</span></div>
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="img"><path d="M13 18h20v12a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8V18Z"/><path d="M33 21h3a5 5 0 0 1 0 10h-3"/><path d="M18 12v3M23 11v4M28 12v3"/></svg>
+          </div>
           <div class="brand-copy">
             <div class="brand-title">CAFÉ BPX</div>
             <div class="brand-subtitle">Que tal um café?</div>
           </div>
         </a>
-        <a class="admin-link" href="login.html">Área do adm</a>
+        <a class="admin-link" href="login.html">
+          <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2"/><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M12 14v3"/></svg>
+          <span>Área do adm</span>
+        </a>
       </div>
     </header>
 
@@ -29,7 +34,7 @@
       <section class="hero-card">
         <h1>Qual vai ser a sua <span class="highlight-word">Pausa?</span></h1>
         <p class="hero-text">Confira o que está disponível antes de ir buscar sua bebida.</p>
-        <p class="hero-note"><span class="note-strong">Amarelo? Pode ir buscar.</span> As opções em cinza estão indisponíveis ou aguardam confirmação.</p>
+        <p class="hero-note"><span class="note-strong">Amarelo? Pode ir buscar.</span> <span>As opções em cinza estão indisponíveis ou aguardam confirmação.</span></p>
       </section>
 
       <section class="section-head">
@@ -41,7 +46,7 @@
 
       <footer class="footer-text">
         <p>CAFÉ BPX · Que tal um café?</p>
-        <p id="lastUpdated">Atualizado agora · Consulta automática a cada 15 s</p>
+        <p id="lastUpdated">Atualizado em 12/09, 17:17 · Consulta automática a cada 15 s</p>
       </footer>
     </main>
   </div>
