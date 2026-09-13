@@ -1,0 +1,9 @@
+.availability-pill{
+  border-radius:18px;
+}
+
+@media(max-width:640px){
+  .availability-pill{
+    border-radius:15px;
+  }
+}
