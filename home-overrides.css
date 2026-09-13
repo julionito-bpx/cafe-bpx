@@ -2,6 +2,16 @@
   border-radius:18px;
 }
 
+.footer-text{
+  text-align:center;
+}
+
+.footer-updated{
+  width:100%;
+  text-align:center;
+  margin:0;
+}
+
 @media(max-width:640px){
   .availability-pill{
     border-radius:15px;
