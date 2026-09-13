@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café BPX</title>
+  <meta name="description" content="Consulte a disponibilidade dos cafés da BPX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand-wrap" href="index.html" aria-label="Café BPX - início">
+          <div class="brand-mark"><span>☕</span></div>
+          <div class="brand-copy">
+            <div class="brand-title">CAFÉ BPX</div>
+            <div class="brand-subtitle">Que tal um café?</div>
+          </div>
+        </a>
+        <a class="admin-link" href="login.html">Área do adm</a>
+      </div>
+    </header>
+
+    <main class="container main-flow">
+      <section class="hero-card">
+        <h1>Qual vai ser a sua <span class="highlight-word">Pausa?</span></h1>
+        <p class="hero-text">Confira o que está disponível antes de ir buscar sua bebida.</p>
+        <p class="hero-note"><span class="note-strong">Amarelo? Pode ir buscar.</span> As opções em cinza estão indisponíveis ou aguardam confirmação.</p>
+      </section>
+
+      <section class="section-head">
+        <h2>Nosso cardápio</h2>
+        <div id="publicAvailability" class="availability-pill">9 de 12 disponíveis</div>
+      </section>
+
+      <section id="coffeeGrid" class="coffee-grid public-grid" aria-label="Cardápio de cafés"></section>
+
+      <footer class="footer-text">
+        <p>CAFÉ BPX · Que tal um café?</p>
+        <p id="lastUpdated">Atualizado agora · Consulta automática a cada 15 s</p>
+      </footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
