@@ -474,20 +474,22 @@ function renderAdminGrid() {
   updateAdminSummary();
 }
 
-function addCoffee(name, units) {
+function addCoffee(name, units, image = '') {
   const cleanName = name.trim();
+  const cleanImage = image.trim();
   if (!cleanName) return;
 
   const existing = adminData.find(item => item.name.toLocaleLowerCase('pt-BR') === cleanName.toLocaleLowerCase('pt-BR'));
   if (existing) {
     existing.units = units;
+    if (cleanImage) existing.image = cleanImage;
     return;
   }
 
   adminData.push({
     id: createId(),
     name: cleanName,
-    image: EMPTY_COFFEE_IMAGE,
+    image: cleanImage || EMPTY_COFFEE_IMAGE,
     units
   });
 }
@@ -517,8 +519,9 @@ async function renderAdmin() {
   if (form) form.onsubmit = async event => {
     event.preventDefault();
     const nameInput = document.getElementById('coffeeName');
+    const imageInput = document.getElementById('coffeeImage');
     const unitsInput = document.getElementById('coffeeUnits');
-    addCoffee(nameInput.value, normalizeUnits(unitsInput.value));
+    addCoffee(nameInput.value, normalizeUnits(unitsInput.value), imageInput.value);
     renderAdminGrid();
 
     try {
