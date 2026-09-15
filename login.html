@@ -9,13 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="login-overrides.css" />
 </head>
 <body data-page="login">
   <div class="site-shell login-shell">
     <header class="topbar">
       <div class="container topbar-inner">
         <a class="brand-wrap" href="index.html" aria-label="Café BPX - início">
-          <div class="brand-mark"><span>☕</span></div>
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="img"><path d="M13.5 20.5h21v12.5a8.5 8.5 0 0 1-8.5 8.5h-4a8.5 8.5 0 0 1-8.5-8.5V20.5Z"/><path d="M34.5 24h3.2a6 6 0 0 1 0 12h-3.2"/><path d="M18 14.5v-4M24 14.5v-4M30 14.5v-4"/></svg>
+          </div>
           <div class="brand-copy">
             <div class="brand-title">CAFÉ BPX</div>
             <div class="brand-subtitle">Que tal um café?</div>
@@ -26,24 +29,50 @@
 
     <main class="container login-main">
       <section class="login-card">
-        <div class="adm-badge">ADM</div>
         <h1>Acesso administrativo</h1>
         <p>Entre para atualizar a disponibilidade dos cafés.</p>
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" class="login-form" novalidate>
           <div class="field">
             <label for="user">Usuário</label>
-            <input id="user" type="text" value="admin" autocomplete="username" />
+            <input id="user" type="text" autocomplete="username" />
           </div>
           <div class="field">
             <label for="password">Senha</label>
-            <input id="password" type="password" value="admin" autocomplete="current-password" />
+            <input id="password" type="password" autocomplete="current-password" />
           </div>
           <button type="submit" class="primary-btn">Entrar</button>
+          <div id="loginError" class="login-error" aria-live="polite"></div>
         </form>
         <a class="back-link" href="index.html">Voltar para visualização</a>
       </section>
     </main>
   </div>
-  <script src="app.js"></script>
+  <script>
+    async function sha256(text) {
+      const bytes = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    const form = document.getElementById('loginForm');
+    const userInput = document.getElementById('user');
+    const passwordInput = document.getElementById('password');
+    const loginError = document.getElementById('loginError');
+    const expectedUser = 'cafebpxadm';
+    const expectedPasswordHash = '3d790dadf5c41cd4f2de53f5e6010ce2d50a54a734ac241c1ce33aef22cc9ee9';
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const user = userInput.value.trim();
+      const passwordHash = await sha256(passwordInput.value);
+
+      if (user === expectedUser && passwordHash === expectedPasswordHash) {
+        loginError.textContent = '';
+        window.location.href = 'admin.html';
+      } else {
+        loginError.textContent = 'Usuário ou senha inválidos.';
+      }
+    });
+  </script>
 </body>
 </html>
