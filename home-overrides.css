@@ -12,6 +12,21 @@
   margin:0;
 }
 
+/* Cards indisponíveis em escala de cinza */
+.coffee-card.unavailable{
+  filter:grayscale(1);
+}
+
+.coffee-card.unavailable .coffee-image{
+  filter:grayscale(1) brightness(.78) contrast(.92);
+  opacity:.72;
+}
+
+.coffee-card.unavailable .coffee-name{
+  color:#b9b9bd;
+  opacity:.88;
+}
+
 /* Topo alinhado à referência enviada */
 .topbar-inner{
   height:113px;
