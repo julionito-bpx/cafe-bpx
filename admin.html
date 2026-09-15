@@ -28,13 +28,19 @@
 
     <main class="container main-flow admin-main">
       <section class="section-head admin-head">
-        <div>
-          <h2>Controle de disponibilidade</h2>
-          <p class="admin-subtitle">Ative ou desative cada bebida e salve o status atual.</p>
+        <div class="admin-heading-copy">
+          <h2>Controle de Disponibilidade</h2>
+          <p class="admin-subtitle">Ative ou desative cada bebida e salve o status atual</p>
         </div>
         <div class="admin-actions">
-          <button id="saveBtn" class="save-btn" type="button">Salvar</button>
           <div id="adminAvailability" class="availability-pill">9 de 12 disponíveis</div>
+          <button id="saveBtn" class="save-btn icon-save-btn" type="button" aria-label="Salvar disponibilidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v11"></path>
+              <path d="M8 10l4 4 4-4"></path>
+              <path d="M4 17v3h16v-3"></path>
+            </svg>
+          </button>
         </div>
       </section>
 
