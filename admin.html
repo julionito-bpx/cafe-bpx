@@ -29,20 +29,28 @@
     <main class="container main-flow admin-main">
       <section class="section-head admin-head">
         <div class="admin-heading-copy">
-          <h2>Controle de Disponibilidade</h2>
-          <p class="admin-subtitle">Ative ou desative cada bebida e salve o status atual</p>
+          <h2>Controle de Estoque</h2>
+          <p class="admin-subtitle">Cadastre tipos de café e ajuste quantas unidades ainda existem</p>
         </div>
         <div class="admin-actions">
-          <div id="adminAvailability" class="availability-pill">9 de 12 disponíveis</div>
-          <button id="saveBtn" class="save-btn icon-save-btn" type="button" aria-label="Salvar disponibilidade">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v11"></path>
-              <path d="M8 10l4 4 4-4"></path>
-              <path d="M4 17v3h16v-3"></path>
-            </svg>
+          <div id="adminAvailability" class="availability-pill">0 unidades</div>
+          <button id="saveBtn" class="save-btn icon-save-btn" type="button">
+            <span>Salvar opções</span>
           </button>
         </div>
       </section>
+
+      <form id="coffeeForm" class="coffee-form" autocomplete="off">
+        <label>
+          <span>Tipo de café</span>
+          <input id="coffeeName" type="text" maxlength="48" placeholder="Ex.: Cappuccino especial" required>
+        </label>
+        <label>
+          <span>Unidades</span>
+          <input id="coffeeUnits" type="number" min="0" step="1" placeholder="0" required>
+        </label>
+        <button class="save-btn form-save-btn" type="submit">Cadastrar</button>
+      </form>
 
       <section id="adminGrid" class="coffee-grid admin-grid" aria-label="Painel administrativo"></section>
     </main>

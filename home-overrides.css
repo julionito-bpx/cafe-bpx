@@ -176,3 +176,71 @@
     height:16px;
   }
 }
+
+@media(max-width:640px){
+  body[data-page="home"] .public-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  body[data-page="home"] .coffee-card{
+    aspect-ratio:4/5;
+    min-height:178px;
+  }
+
+  body[data-page="home"] .card-button{
+    padding:10px 24px 12px 8px;
+  }
+
+  body[data-page="home"] .coffee-image{
+    width:66%;
+    height:45%;
+  }
+
+  body[data-page="home"] .coffee-name{
+    min-height:34px;
+    padding:0 2px;
+    font-size:12px;
+    line-height:1.12;
+  }
+
+  body[data-page="home"] .stock-count{
+    margin-top:8px;
+    font-size:11px;
+  }
+
+  body[data-page="home"] .stock-status{
+    min-height:24px;
+    margin-top:6px;
+    font-size:10px;
+    line-height:1.15;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  body[data-page="home"] .stock-thermometer{
+    top:36px;
+    right:7px;
+    bottom:12px;
+  }
+
+  body[data-page="home"] .footer-text{
+    padding-bottom:28px;
+  }
+}
+
+@media(max-width:360px){
+  body[data-page="home"] .coffee-card{
+    min-height:170px;
+  }
+
+  body[data-page="home"] .card-button{
+    padding-right:22px;
+  }
+
+  body[data-page="home"] .coffee-name{
+    font-size:11px;
+  }
+}
