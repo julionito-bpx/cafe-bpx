@@ -1,0 +1,145 @@
+.login-main{
+  min-height:calc(100vh - 118px);
+  padding:36px 0;
+  display:grid;
+  place-items:center;
+}
+
+.login-card{
+  width:min(100%,560px);
+  background:#181a1c;
+  border:1px solid #363a3e;
+  border-radius:30px;
+  padding:30px 36px 28px;
+  box-shadow:none;
+}
+
+.login-card .adm-badge{
+  display:none;
+}
+
+.login-card h1{
+  margin:0;
+  text-align:center;
+  font-size:28px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+
+.login-card > p{
+  margin:18px 0 48px;
+  text-align:center;
+  color:#a9acb0;
+  font-size:18px;
+  line-height:1.45;
+}
+
+.login-form{
+  display:grid;
+  gap:26px;
+}
+
+.field{
+  display:grid;
+  gap:12px;
+}
+
+.field label{
+  color:#f3f3f4;
+  font-size:18px;
+  font-weight:700;
+}
+
+.field input{
+  width:100%;
+  height:74px;
+  border-radius:16px;
+  border:1px solid #363a3e;
+  background:#111315;
+  color:#fff;
+  padding:0 18px;
+  outline:none;
+  font-size:18px;
+}
+
+.field input:focus{
+  border-color:#ffc400;
+  box-shadow:0 0 0 3px rgba(255,196,0,.12);
+}
+
+.primary-btn{
+  height:74px;
+  margin-top:36px;
+  border:0;
+  border-radius:16px;
+  background:#ffc400;
+  color:#111;
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.back-link{
+  display:block;
+  margin:48px 0 0;
+  text-align:center;
+  color:#a9acb0;
+  font-size:18px;
+}
+
+.login-error{
+  min-height:20px;
+  margin-top:10px;
+  color:#ff7d7d;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:640px){
+  .login-main{
+    min-height:calc(100vh - 96px);
+    padding:14px 0 24px;
+  }
+
+  .login-card{
+    width:100%;
+    border-radius:26px;
+    padding:28px 24px 24px;
+  }
+
+  .login-card h1{
+    font-size:24px;
+  }
+
+  .login-card > p{
+    margin:16px 0 42px;
+    font-size:16px;
+  }
+
+  .login-form{
+    gap:24px;
+  }
+
+  .field label{
+    font-size:16px;
+  }
+
+  .field input{
+    height:64px;
+    border-radius:15px;
+    font-size:16px;
+  }
+
+  .primary-btn{
+    height:64px;
+    margin-top:30px;
+    border-radius:15px;
+    font-size:18px;
+  }
+
+  .back-link{
+    margin-top:40px;
+    font-size:16px;
+  }
+}
